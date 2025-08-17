@@ -1,6 +1,6 @@
 
 describe("Rota inicial", () => {
-  it("Retornar  mensagem correta", async () => {
+  it("Retornar mensagem", async () => {
     expect(true).toEqual(true)
   });
 });

@@ -24,10 +24,12 @@
     "bcrypt": "^6.0.0",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.17.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
+    "@types/mongoose": "^5.11.96",
     "cross-env": "^7.0.3",
     "jest": "^30.0.4",
     "supertest": "^7.1.1",

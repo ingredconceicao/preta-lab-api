@@ -1,21 +1,15 @@
-import express from "express";
-import { transactions } from "./data";
-import { getTransactionById } from "./controller/transaction";
+import dotenv from "dotenv";
+import app from "./app";
+import { connectMongo } from "./database/MongoConnection";
 
-const app = express();
+dotenv.config();
 
-app.get("/", (_req, res) => {
-  res.json({ message: "Transactions API" });
+const PORT = process.env.PORT || 3000;
+
+console.log("⏳ Conectando ao MongoDB Atlas...");
+
+connectMongo();
+
+app.listen(PORT, () => {
+  console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
-
-app.get("/transactions", (_req, res) => {
-  res.json({ transactions });
-});
-
-app.get("/transactions/:id", (req, res) => getTransactionById(req, res));
-
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
-
-export default app;
