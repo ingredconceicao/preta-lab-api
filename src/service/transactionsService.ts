@@ -16,4 +16,10 @@ export const transactionById = (id: string): Transaction | null => {
 export const createTransaction = (transaction: Transaction): Transaction =>{
   transactions.push(transaction);
   return transaction
-}
+};
+
+ export const getTransactions = (): Transaction[] =>{
+  return transactions
+ }
+
+
