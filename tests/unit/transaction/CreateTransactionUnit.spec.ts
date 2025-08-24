@@ -1,4 +1,4 @@
-import { createTransaction } from "../../src/controller/transaction";
+import { createTransaction } from "../../../src/controller/transaction";
 
 describe("createTransaction", () => {
   it("should create a transaction and return 201", () => {

@@ -1,5 +1,5 @@
 import request from "supertest";
-import app from "../../src/app";
+import app from "../../../src/app";
 
 describe("Integration Test - Transactions", () => {
   it("should return a transaction by ID with status 200", async () => {
