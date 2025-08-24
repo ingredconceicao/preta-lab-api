@@ -8,7 +8,7 @@ export const createTransaction = (req: Request, res: Response) => {
   const { date, description, amount, type, category } = req.body;
 
   const newTransaction = {
-    id: transactions.length + 1, // gera ID simples
+    id: transactions.length + 1, 
     date,
     description,
     amount,
