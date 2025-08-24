@@ -69,6 +69,7 @@ jobs:
 
     env:
       MONGO_URL: ${{ secrets.MONGO_URL }}
+      PORT: ${{secrets.PORT}}
 
     steps:
       - name: Checkout
