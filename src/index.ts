@@ -3,7 +3,7 @@ import app from "./app";
 import { connectDB } from "./database/MongoConnection";
 
 dotenv.config();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 async function startServer() {
   if (process.env.NODE_ENV !== "test") {

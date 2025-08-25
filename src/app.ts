@@ -13,7 +13,7 @@ if (process.env.NODE_ENV !== "test") {
   connectDB();
 }
 
-app.post("/checkout", PurchaseController.checkout);
+
 app.post("/transactions", createTransaction);
 app.get("/transactions", getTransactions);
 app.get("/transactions/:id", getTransactionById);
