@@ -18,6 +18,10 @@ app.post("/transactions", createTransaction);
 app.get("/transactions", getTransactions);
 app.get("/transactions/:id", getTransactionById);
 
+app.get("/checkout/:id", PurchaseController.getById);
+app.post("/checkout", PurchaseController.checkout);
+
+
 export default app;
 
 

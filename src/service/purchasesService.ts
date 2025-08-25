@@ -19,4 +19,19 @@ export class PurchasesService {
       items: purchase.items
     };
   }
+
+  async getPurchase(id: string): Promise<any> {
+    const purchase = await purchaseModel.findById(id);
+
+    if (!purchase) {
+      throw new Error("Purchase not found");
+    }
+
+    return {
+      id: purchase._id.toString(),
+      date: purchase.date,
+      total: purchase.total,
+      items: purchase.items
+    };
+  }
 }
