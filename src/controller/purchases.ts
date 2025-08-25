@@ -12,4 +12,17 @@ export class PurchaseController {
       return res.status(400).json({ message: error.message });
     }
   }
+
+  static async getById(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+      const purchase = await purchaseService.getPurchase(id);
+      return res.status(200).json(purchase);
+    } catch (error: any) {
+      if (error.message === "Purchase not found") {
+        return res.status(404).json({ message: error.message });
+      }
+      return res.status(500).json({ message: "Internal server error" });
+    }
+  }
 }
