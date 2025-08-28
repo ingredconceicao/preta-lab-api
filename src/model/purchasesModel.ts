@@ -30,3 +30,5 @@ const purchaseSchema = new Schema<Purchase>({
 
 
 export const purchaseModel = model<Purchase>("Purchase", purchaseSchema);
+
+

@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import mongoose from "mongoose";
 import { PurchasesService } from "../service/purchasesService";
 
 const purchaseService = new PurchasesService();
@@ -16,7 +17,13 @@ export class PurchaseController {
   static async getById(req: Request, res: Response) {
     try {
       const { id } = req.params;
+
+      if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).json({ message: "Invalid ID format" });
+      }
+
       const purchase = await purchaseService.getPurchase(id);
+
       return res.status(200).json(purchase);
     } catch (error: any) {
       if (error.message === "Purchase not found") {
